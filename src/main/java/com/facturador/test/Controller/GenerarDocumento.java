@@ -23,6 +23,7 @@ import com.facturador.test.Service.GenerarXML;
 
 import io.github.project.openubl.xsender.files.exceptions.UnsupportedXMLFileException;
 import lombok.RequiredArgsConstructor;
+import service.sunat.gob.pe.billconsultservice.StatusResponse;
 
 @RestController
 @RequiredArgsConstructor
@@ -37,6 +38,20 @@ public class GenerarDocumento {
             XMLSignatureException, MarshalException, SAXException, ParserConfigurationException, TransformerException,
             UnsupportedXMLFileException {
         generarXML.generarBoleta(boleta);
+        return boleta;
+    }
+
+    @PostMapping("/consultarcdr")
+    public Boleta consultartBol(@RequestBody Boleta boleta) {
+        generarXML.consultarCDR(boleta);
+
+        return boleta;
+    }
+
+    @PostMapping("/consultarxml")
+    public Boleta consultartxml(@RequestBody Boleta boleta) {
+        generarXML.consultaXML(boleta);
+
         return boleta;
     }
 
