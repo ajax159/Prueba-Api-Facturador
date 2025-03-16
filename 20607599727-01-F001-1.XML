@@ -163,8 +163,6 @@
          <cbc:PriceAmount currencyID="PEN">5</cbc:PriceAmount>
       </cac:Price>
    </cac:InvoiceLine>
-
-   
    <cac:InvoiceLine>
       <cbc:ID>2</cbc:ID>
       <cbc:InvoicedQuantity unitCode="NIU" unitCodeListID="UN/ECE rec 20" unitCodeListAgencyName="United Nations Economic Commission for Europe">4</cbc:InvoicedQuantity>
