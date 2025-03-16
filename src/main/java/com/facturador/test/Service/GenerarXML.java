@@ -158,11 +158,10 @@ public class GenerarXML {
                 ByteArrayOutputStream bos = new ByteArrayOutputStream();
                 for (int readNum; (readNum = fis.read(bytes)) != -1;) {
                         bos.write(bytes, 0, readNum);
-                        System.out.println("read " + readNum + " bytes,");
                 }
                 fis.close();
 
-                BillServiceFileAnalyzer fileAnalyzer = new BillServiceXMLFileAnalyzer(miXML, companyURLs);
+                BillServiceFileAnalyzer fileAnalyzer = new BillServiceXMLFileAnalyzer(bytes, companyURLs);
                 ZipFile zipFile = fileAnalyzer.getZipFile();
 
                 BillServiceDestination fileDestination = fileAnalyzer.getSendFileDestination();
